@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:target_sistemas_prova/src/modules/login/features/login/presentation/pages/login_page.dart';
+import 'package:target_sistemas_prova/src/modules/home/presentation/pages/home_page.dart';
+import 'package:target_sistemas_prova/src/modules/login/presentation/pages/login_page.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -9,9 +10,13 @@ class App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.lightGreen,
+        primarySwatch: Colors.green,
       ),
-      home: const LoginPage(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const LoginPage(),
+        '/home': (context) => const HomePage(),
+      },
     );
   }
 }
